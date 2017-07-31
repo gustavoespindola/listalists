@@ -10,7 +10,6 @@ body {
 	font-size: 15px;
 	background-color: #f2f3f5;
 	margin: 0;
-	padding-top: 4rem;
 	overflow-y: scroll;
 }
 
@@ -68,7 +67,7 @@ b, strong{
 /*Header*/
 .navbar {
 	background-color: white;
-	position: fixed;
+	position: relative;
 	z-index: 999;
 	height: 4rem;
 	top: 0;
@@ -256,6 +255,12 @@ b, strong{
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
+}
+
+.too-long {
+	max-height: 66px;
+	overflow: hidden;
+	position: relative;
 }
 
 /*Loader*/
