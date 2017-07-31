@@ -64,6 +64,12 @@ b, strong{
 	margin: 0 auto;
 }
 
+.footer {
+  padding: 4rem 0;
+  font-size: .7rem;
+  color: #808080;
+}
+
 /*Header*/
 .navbar {
 	background-color: white;
