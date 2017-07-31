@@ -8,6 +8,8 @@ description: Conecta a tu colegio con la tecnología
 ---
 Gestión Colegio ofrece una solución basada en diferentes módulos, disponibles para adaptarse a las necesidades de cada colegio.
 
+![null](/img/uploads/gestioncolegio.jpg)
+
 Libro de clases Registros de evaluaciones, anotaciones, observaciones y asistencia.
 
 Inspectoría Gestión de justificaciones, asistencia y atrasos.
