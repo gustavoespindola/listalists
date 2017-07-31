@@ -1,0 +1,33 @@
+{{ partial "head" . }}
+  <div class="main">
+    <div class="sheet">
+      {{ if eq .Params.opensource "Yes" }}
+        <div class="tag">open source</div>
+      {{ end }}
+      <h1>{{ .Title }}</h1>
+      <div class="links">
+        <a href="{{ .Params.homepage }}"><i class="fa fa-home"></i> {{ .Params.homepage }}</a>
+        <span class="separator">|</span>
+        <a href="https://github.com/{{ .Params.repo }}"><i class="fa fa-github"></i> https://github.com/{{ .Params.repo }}</a>
+      </div>
+      {{ if .Params.images }}
+      <div class="images">
+        {{ range .Params.images }}
+          <img src="{{ .path }}" class="responsive"/>
+        {{ end }}
+      </div>
+      {{ end }}
+      <div class="text">
+      <h7>Supported Site Generators:</h7>
+        <ul>
+          {{ range .Params.supportedgenerators }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+
+        {{ .Content }}
+      </div>
+
+    </div>
+  </div>
+{{ partial "footer" . }}

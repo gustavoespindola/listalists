@@ -1,0 +1,35 @@
+<!-- {{ partial "navbar" . }} -->
+<!-- {{ .Title }} -->
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>{{ .Title }}</title>
+
+    <meta name="description" content="headlessCMS is a leaderboard of the top Content Management Systems (CMS) for JAMstack sites. Promoting a static approach to building websites." />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="headlessCMS is a leaderboard of the top Content Management Systems (CMS) for JAMstack sites. Promoting a static approach to websites.">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="headlessCMS" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.headlessCMS.com/" />
+    <meta property="og:image" content="https://www.headlessCMS.com/images/headlessCMS.png" />
+    <meta property="og:description" content="headlessCMS is a leaderboard of the top Content Management Systems (CMS) for JAMstack sites. Promoting a static approach to building websites." />
+
+    <!-- headlessCMS styles -->
+    <link href="/css/normalize.css" rel="stylesheet">
+    <link href="/css/all.css" rel="stylesheet">
+  </head>
+
+  <body>
+    {{ partial "navbar" . }}

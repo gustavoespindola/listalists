@@ -1,0 +1,4 @@
+baseurl: "/"
+languageCode: "en-us"
+title: "headlessCMS | Top Content Management Systems for JAMstack Sites"
+metaDataFormat: "yaml"
