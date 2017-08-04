@@ -41,15 +41,6 @@
 			</div>
 			{{ end }} -->
 
-
-{{ if .Params.projecttags }}
-  <strong>Director{{ if gt (len .Params.projecttags) 1 }}s{{ end }}:</strong>
-  {{ range $index, $projecttag := .Params.projecttags }}{{ if gt $index 0 }}, {{ end }}
-  <a href="{{ "directors/" | relURL }}{{ . | urlize }}">{{ . }}</a>
-  {{ end }}
-{{ end }}
-
-
 {{ .Content }}
 		</div>
 	</div>

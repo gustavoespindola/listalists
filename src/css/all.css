@@ -52,6 +52,11 @@ b, strong{
 	font-weight: 600;
 }
 
+ul, li{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
 
 .main {
 	max-width: 60rem;
@@ -370,6 +375,12 @@ b, strong{
 		border-radius: .15rem;
 		margin: 1rem 0;
 		letter-spacing: .025rem;
+	}
+	.headline {
+	  color: #808080;
+	  font-size: 1.5rem;
+	  font-weight: 300;
+	  margin-bottom: 1rem;
 	}
 }
 .media{

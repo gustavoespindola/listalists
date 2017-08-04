@@ -59,8 +59,7 @@
 
 
 		<!-- {{ if .Params.projectthumb }}{{ end }} -->
-	<div class="news-list">
-		<ul>
+	<ul class="news-list">
 		{{ range $index, $id := where .Site.Pages.ByTitle "Section" "projects" }}
 			{{ if ne .Title "Projects" }}
 			<li class="news-item {{ .Params.projectcategory | urlize }}">
@@ -88,8 +87,7 @@
 			{{ end }}
 		{{ end }}
 
-		</ul>
-	</div>
+	</ul>
 </div>
 
 <div class="loader">
