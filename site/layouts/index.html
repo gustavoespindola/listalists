@@ -2,15 +2,19 @@
 <div class="main landing">
 
 <div class="news-view view">
-	<div class="hide news-list-nav">
-		<a class="disabled">&lt; prev</a><span>1/21</span><a class="" href="/top/2">more &gt;</a>
+	<div class="news-list-nav">
+		<li  data-filter="*">Todos</li>
+		<li  data-filter=".educacion">Educación</li>
+		<li  data-filter=".salud">Salud</li>
 	</div>
+
+
 		<!-- {{ if .Params.projectthumb }}{{ end }} -->
 	<div class="news-list">
 		<ul>
 		{{ range $index, $id := where .Site.Pages.ByTitle "Section" "projects" }}
 			{{ if ne .Title "Projects" }}
-			<li class="news-item {{ .Title | urlize }}">
+			<li class="news-item {{ .Params.projectcategory | urlize }}">
 				<div class="news-item-inner">
 						<a href="{{ .Permalink }}" class="thumb">
 							<div class="thumb-image" style="background-image: url('images/uploads/{{ .Params.projectthumb }}');"></div>
@@ -33,7 +37,7 @@
 				</div>
 			</li>
 			{{ end }}
-			{{ end }}
+		{{ end }}
 
 		</ul>
 	</div>

@@ -11,7 +11,7 @@ description: >-
   ![undefined](/images/uploads/Captura de pantalla 2017-08-04 07.22.00.jpg)
 projectthumb: poliglota.jpg
 projectvideo: 'https://www.youtube.com/watch?v=0VNBhxwo6yQ'
-projectcategory: Educación
+projectcategory: Educacion
 projecttags: 'Idioma, Reuniones'
 projectcreator: poligloton
 projectcountry: Chile

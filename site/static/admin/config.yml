@@ -26,7 +26,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Country", name: "projectcountry", widget: "string"}
       - {label: "Contact Email", name: "projectemail", widget: "string"}
       - {label: "Linkedin user", name: "projectlinkedin", widget: "string"}
-      - {label: "Type", name: "typeofcms", widget: "string"}
+      - {label: "Status", name: "typeofcms", widget: "string"}
   - name: "pages"
     label: "Pages"
     folder: "site/content/pages" # The path to the folder where the documents are stored
