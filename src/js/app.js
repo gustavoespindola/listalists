@@ -6,6 +6,8 @@ $('.news-item .headline').each(function() {
   }
 });
 
+$('.thumb-image').show();
+
 // init Isotope
 var $grid = $('.news-list').isotope({ 
 });
