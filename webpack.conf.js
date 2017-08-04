@@ -13,7 +13,7 @@ export default {
         loader: "babel",
         test: /\.js?$/,
         exclude: /node_modules/,
-        query: {cacheDirectory: true}
+        query: {cacheDirectory: false}
       }
     ]
   },

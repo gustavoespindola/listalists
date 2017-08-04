@@ -11,13 +11,10 @@
 			{{ if ne .Title "Projects" }}
 			<li class="news-item {{ .Title | urlize }}">
 				<div class="news-item-inner">
-						<div class="thumb">
-							<div class="thumb-image">
-							{{ if .Params.projectthumb }}
-								<img class="photos-inside" src="{{ .Params.projectthumb }}">
-							{{ end }}
-							</div>
-						</div>
+						<a href="{{ .Permalink }}" class="thumb">
+							<!-- {{ if .Params.projectthumb }}{{ end }} -->
+							<div class="thumb-image" style="background-image: url('images/uploads/{{ .Params.projectthumb }}');"></div>
+						</a> 
 						<div class="news-item-content">
 							<span class="title">
 								<a href="{{ .Permalink }}" >{{ .Title }}</a> 
@@ -25,7 +22,8 @@
 							</span>
 							<a href="{{ .Permalink }}" class="headline">{{ .Params.projectheadline }}</a>
 							<span class="meta">
-								<span class="dimension">{{ range .Params.category }}{{ . }}{{ end }}<a class="hide" href="#">Educación</a></span> 
+								<span class="dimension"><a  href="#">{{ .Params.projectcategory }}</a></span> 
+								<!-- {{ range .Params.category }}{{ . }}{{ end }} -->
 								<span class="hide by">by&#32;<a class="" href="/user/alecjw">alecjw</a></span> 
 								<span class="hide time" class="hide">1 hour ago</span> 
 								<span class="likes-link"><a class="" href="/item/14743039">11 Likes</a></span>

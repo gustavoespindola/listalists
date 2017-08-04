@@ -18,7 +18,7 @@ description: >-
   The retention of information that smartphone technology allows makes for a
   powerful disease-mapping tool that can contribute towards predicting future
   outbreaks.
-projectthumb: img/upload/xRapid.jpg
+projectthumb: xRapid.jpg
 projectvideo: 'https://youtu.be/uiyVV2HNF88'
 projectcategory: salud
 projecttags: 'Biotecnología, Aplicación'

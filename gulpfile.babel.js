@@ -66,7 +66,7 @@ gulp.task("server", ["hugo", "css", "js", "fonts", "images"], () => {
     server: {
       baseDir: "./dist"
     },
-    notify: false
+    notify: true
   });
   gulp.watch("./src/js/**/*.js", ["js"]);
   gulp.watch("./src/css/**/*.css", ["css"]);
