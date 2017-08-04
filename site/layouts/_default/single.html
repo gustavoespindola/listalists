@@ -1,48 +1,56 @@
 {{ partial "head" . }}
-  <div class="main">
-    <div class="sheet">
+	<div class="main">
+		<div class="sheet">
 <!--       {{ if eq .Params.opensource "Yes" }}
-        <div class="tag">open source</div>
-      {{ end }} -->
-      <h1>{{ .Title }}</h1>
-      <div class="links">
-      <div class="headline">{{ .Params.projectheadline }}</div>
-      <a class="btn go-site" href="{{ .Params.projectsite }}/?utm_source=trafkin" target="blank" >Ver Sitio</a>
-      </div>
+				<div class="tag">open source</div>
+			{{ end }} -->
+			<h1>{{ .Title }}</h1>
+			<div class="links">
+			<div class="headline">{{ .Params.projectheadline }}</div>
+			<a class="btn go-site" href="{{ .Params.projectsite }}/?utm_source=trafkin" target="blank" >Ver Sitio</a>
+			</div>
 
-      <div class="media">
-      <div class="project-video">{{ .Params.projectvideo }}</div>
-      <div class="project-description">{{ .Params.description }}</div>
-      </div>
+			<div class="media">
+				<div class="media-wrapper">
+					<div class="hide media-item">
+						<img class="single-thumb" src="https://listalists.com/images/uploads/{{ .Params.projectthumb }}" alt="">
+					</div>
+					<div class="media-item">
+						<div class="project-video">{{ .Params.projectvideo }}</div>
+					</div>
+				</div>
+			</div>
 
-      <div class="taxonomy">
-      <div class="category">{{ .Params.projectcategory }}</div>
-      <div class="tags">{{ .Params.projecttags }}</div>
-      </div>
-      <div class="meta">
-        <div class="meta-unit">{{ .Params.projectcreator }}</div>
-        <div class="meta-unit">{{ .Params.projectcreator }}</div>
-        <div class="meta-unit">{{ .Params.projectcountry }}</div>
-        <div class="meta-unit">{{ .Params.projectemail }}</div>
-      </div>
+			<div class="project-description">{{ .Params.description }}</div>
+
+			<div class="taxonomy">
+				<div class="category">{{ .Params.projectcategory }}</div>
+				<div class="tags">{{ .Params.projecttags }}</div>
+			</div>
+			<div class="meta">
+				<div class="meta-unit"><b>País</b> {{ .Params.projectcreator }}</div>
+				<div class="meta-unit"><b>País</b> {{ .Params.projectcreator }}</div>
+				<div class="meta-unit"><b>País</b> {{ .Params.projectcountry }}</div>
+				<div class="meta-unit"><b>País</b> {{ .Params.projectemail }}</div>
+			</div>
 <!--       {{ if .Params.images }}
-      <div class="images">
-        {{ range .Params.images }}
-          <img src="{{ .path }}" class="responsive"/>
-        {{ end }}
-      </div>
-      {{ end }} -->
-      <img class="single-thumb" src="https://listalists.com/images/uploads/{{ .Params.projectthumb }}" alt="">
-      <div class="text">
-      <h7>Supported Site Generators:</h7>
-        <ul>
-          {{ range .Params.supportedgenerators }}
-            <li>{{ . }}</li>
-          {{ end }}
-        </ul>
-        {{ .Content }}
-      </div>
+			<div class="images">
+				{{ range .Params.images }}
+					<img src="{{ .path }}" class="responsive"/>
+				{{ end }}
+			</div>
+			{{ end }} -->
 
-    </div>
-  </div>
+
+{{ if .Params.projecttags }}
+  <strong>Director{{ if gt (len .Params.projecttags) 1 }}s{{ end }}:</strong>
+  {{ range $index, $projecttag := .Params.projecttags }}{{ if gt $index 0 }}, {{ end }}
+  <a href="{{ "directors/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+  {{ end }}
+{{ end }}
+
+
+{{ .Content }}
+		</div>
+	</div>
 {{ partial "footer" . }}

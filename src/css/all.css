@@ -186,6 +186,7 @@ b, strong{
 	position: relative;
 	line-height: 1.5;
 	overflow: hidden;
+	min-width: 100%;
 	.news-item-inner{
 		display: flex;
 		padding:1em;
@@ -292,15 +293,17 @@ b, strong{
 	}
 }
 
-.news-list ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-.too-long {
-	overflow: hidden;
-	position: relative;
+.news-list {
+	width: 100%;
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+	.too-long {
+		overflow: hidden;
+		position: relative;
+	}
 }
 
 /*Loader*/
@@ -357,13 +360,6 @@ b, strong{
   background: #fff;
   padding: 1rem;
   border-bottom: 1px solid #f2f2f2;
-  .single-thumb{
-  	box-shadow: 0 6px 12px rgba(0,0,0,.1);
-  	margin: 1rem 0;
-  	max-width: 100%;
-  	width: 100%;
-  	display: block;
-  }
 	a.btn.go-site {
 		text-transform: uppercase;
 		font-size: .7rem;
@@ -374,6 +370,33 @@ b, strong{
 		border-radius: .15rem;
 		margin: 1rem 0;
 		letter-spacing: .025rem;
+	}
+}
+.media{
+	width: 100%;
+	overflow: hidden;
+	.media-item{
+	}
+}
+.media-item{
+	box-shadow: 0 6px 12px rgba(0,0,0,.1);
+	margin: 1rem 0;
+	max-width: 100%;
+	width: 100%;
+	display: block;
+}
+.project-video{
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	margin: 0 0 1rem 0;
+	iframe {
+	  position: absolute;
+	  top:0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
 	}
 }
 
