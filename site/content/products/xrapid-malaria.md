@@ -26,6 +26,8 @@ projectcreator: xRapidDiagnosis
 projectcountry: London
 projectemail: info@xRapid.com
 projectlinkedin: 'https://www.linkedin.com/company-beta/3765979/'
+typeofcms: producto
 ---
+
 
 
