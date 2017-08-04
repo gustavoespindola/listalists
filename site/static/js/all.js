@@ -28,15 +28,15 @@ $(function() {
     }
   });
 
-  $('.news-view .news-item').matchHeight();
+  $('.landing .card').matchHeight();
 
   $("select[name='filter']").change(function(e) {
     console.log("Filter by: %o", $(this).val());
-    $(".news-item").isotope({filter: $(this).val().replace(/^\.lang-\./, '.lang-')});
+    $(".projects").isotope({filter: $(this).val().replace(/^\.lang-\./, '.lang-')});
   });
 
   $("select[name='sort']").change(function(e) {
     var val = $(this).val();
-    $(".news-item").isotope({sortBy: val, sortAscending: sortAscending[val] || false});
+    $(".projects").isotope({sortBy: val, sortAscending: sortAscending[val] || false});
   });
 });
