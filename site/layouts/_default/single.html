@@ -21,18 +21,17 @@
 				</div>
 			</div>
 
-			<div class="project-description">{{ .Params.description }}</div>
-
-			<div class="taxonomy">
-				<div class="category">{{ .Params.projectcategory }}</div>
-				<div class="tags">{{ .Params.projecttags }}</div>
-			</div>
-			<div class="meta">
-				<div class="meta-unit"><b>País</b> {{ .Params.projectcreator }}</div>
-				<div class="meta-unit"><b>País</b> {{ .Params.projectcreator }}</div>
-				<div class="meta-unit"><b>País</b> {{ .Params.projectcountry }}</div>
-				<div class="meta-unit"><b>País</b> {{ .Params.projectemail }}</div>
-			</div>
+			<p class="project-description">{{ .Params.description }}</p>
+			<ul class="taxonomy">
+				<li class="category"><b>Categoría</b> {{ .Params.projectcategory }}</li>
+				<li class="tags"><b>Conceptos</b> {{ delimit .Params.projecttags ", " }}</li>
+			</ul>
+			<ul class="meta">
+				<li class="meta-unit"><b>Status</b> {{ .Params.typeofcms }}</li>
+				<li class="meta-unit"><b>País</b> {{ .Params.projectcountry }}</li>
+				<li class="meta-unit"><b>Creador</b>@{{ .Params.projectcreator }}</li>
+				<li class="meta-unit"><b>País</b> {{ .Params.projectemail }}</li>
+			</ul>
 <!--       {{ if .Params.images }}
 			<div class="images">
 				{{ range .Params.images }}

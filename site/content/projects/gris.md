@@ -13,7 +13,7 @@ description: >-
 projectthumb: gris.jpg
 projectvideo: 'https://vimeo.com/128316847'
 projectcategory: sanidad
-projecttags: 'tecnología, innovación'
+projecttags: [ "tecnología", "innovación" ]
 projectcreator: igendesign
 projectcountry: Colombia
 projectemail: contact@igen.design
