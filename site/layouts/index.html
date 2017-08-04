@@ -13,9 +13,9 @@
 				<div class="news-item-inner">
 						<div class="thumb">
 							<div class="thumb-image">
-<!-- 							{{ if .Params.images }}
-								<img class="photos-inside" src="/images/photos.svg">
-							{{ end }} -->
+							{{ if .Params.projectthumb }}
+								<img class="photos-inside" src="{{ .Params.projectthumb }}">
+							{{ end }}
 							</div>
 						</div>
 						<div class="news-item-content">
@@ -23,9 +23,9 @@
 								<a href="{{ .Permalink }}" >{{ .Title }}</a> 
 								<span class="hide host">(blog.nothinguntoward.eu)</span>
 							</span>
-							<a href="{{ .Permalink }}" class="headline">{{ .Params.description }}</a>
+							<a href="{{ .Permalink }}" class="headline">{{ .Params.projectheadline }}</a>
 							<span class="meta">
-								<span class="dimension">{{ range .Params.projectcategory }}{{ . }}{{ end }}<a class="hide" href="#">Educación</a></span> 
+								<span class="dimension">{{ range .Params.category }}{{ . }}{{ end }}<a class="hide" href="#">Educación</a></span> 
 								<span class="hide by">by&#32;<a class="" href="/user/alecjw">alecjw</a></span> 
 								<span class="hide time" class="hide">1 hour ago</span> 
 								<span class="likes-link"><a class="" href="/item/14743039">11 Likes</a></span>
