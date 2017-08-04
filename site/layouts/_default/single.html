@@ -22,12 +22,12 @@
 			<p class="project-description">{{ .Params.description }}</p>
 			<ul class="taxonomy">
 				<li class="category"><b>Categoría</b> {{ .Params.projectcategory }}</li>
-				<li class="tags"><b>Conceptos</b> {{ delimit .Params.projecttags ", " }}</li>
+				<!-- <li class="tags"><b>Conceptos</b> {{ delimit .Params.projecttags ", " }}</li> -->
 			</ul>
 			<ul class="meta">
 				<li class="meta-unit"><b>Status</b> {{ .Params.typeofcms }}</li>
 				<li class="meta-unit"><b>País</b> {{ .Params.projectcountry }}</li>
-				<li class="meta-unit"><b>Creador</b>@{{ .Params.projectcreator }}</li>
+				<li class="meta-unit"><b>Creador</b><a href="https://twitter.com/{{ .Params.projectcreator }}" target="blank">@{{ .Params.projectcreator }}</a></li>
 				<li class="meta-unit"><b>País</b> {{ .Params.projectemail }}</li>
 			</ul>
 {{ .Content }}
