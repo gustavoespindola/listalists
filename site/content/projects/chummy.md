@@ -14,7 +14,7 @@ description: >-
 
   We believe that there is a hero in each of us. With Chummy you have the
   easiest tool to change the lives of real people in your city for good.
-projectthumb: Chummy
+projectthumb: chummy.jpg
 projectvideo: 'https://youtu.be/Ow9FEQBWumg'
 projectcategory: desarrollo social
 projecttags: '["Tecnología", "Inclusión", " Mobile", "Startups", "Social Network"]'
@@ -24,4 +24,5 @@ projectemail: info@chummyapp.com
 projectlinkedin: 'https://www.linkedin.com/company-beta/10463499/'
 typeofcms: Disponible ahora
 ---
+
 
