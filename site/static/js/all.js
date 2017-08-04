@@ -1,21 +1,3 @@
-// $(function() {
-//   var share = new Share("#share-button-top", {
-//     networks: {
-//       facebook: {
-//         app_id: "1604147083144211",
-//       }
-//     }
-//   });
-
-  // This is still buggy and just a band-aid
-  // $(window).on('resize', function(){
-  //   $('.navbar').attr('style', '').removeData('pin');
-  //   $('.navbar').addClass('fixed');
-  //   $('.navbar').pin({
-  //     minWidth: 500
-  //   });
-  // });
-
 // init Isotope
 var $grid = $('.news-list').isotope({ 
 });
@@ -25,10 +7,6 @@ var $grid = $('.news-list').isotope({
   $(".news-list").isotope({
     layoutMode: "fitRows",
     getSortData: {
-      // stars: "[data-stars] parseInt",
-      // forks: "[data-forks] parseInt",
-      // issues: "[data-issues] parseInt",
-      // language: "[data-language]",
       title: "[data-title]"
     }
   });
@@ -53,7 +31,6 @@ $('.news-list-nav').on( 'click', 'li', function() {
   });
 
 
-// Embed Videos
 var videoEmbed = {
     invoke: function(){
         $('body .project-video').html(function(i, html) {
