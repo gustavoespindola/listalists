@@ -2,6 +2,3 @@ baseurl: "/"
 languageCode: "en-us"
 title: "listaLists"
 metaDataFormat: "yaml"
-params:
-  Subtitle: "Emprendimientos que hacen del mundo un lugar mejor"
-  AuthorName: "Gustavo Espindola"
