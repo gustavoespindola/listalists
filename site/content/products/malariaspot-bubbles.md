@@ -11,7 +11,8 @@ projecttags: 'aplicación, biotecnología'
 projectcreator: malariaspot
 projectcountry: España
 projectemail: info@malariaspot.org
-projectlinkedin: none
+projectlinkedin: 'https://www.linkedin.com/in/miguel-luengo-oroz-b217245/'
 typeofcms: producto
 ---
+
 
