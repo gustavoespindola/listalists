@@ -20,6 +20,10 @@
 			</div>
 
 			<p class="project-description">{{ .Params.description }}</p>
+			<ul class="taxonomy">
+				<li class="category"><b>Categoría</b> {{ .Params.projectcategory }}</li>
+				<li class="tags"><b>Conceptos</b> {{ .Params.projecttags }}</li>
+			</ul>
 			<ul class="meta">
 				<li class="meta-unit"><b>Status</b> {{ .Params.typeofcms }}</li>
 				<li class="meta-unit"><b>País</b> {{ .Params.projectcountry }}</li>
