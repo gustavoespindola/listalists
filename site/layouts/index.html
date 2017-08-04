@@ -5,6 +5,7 @@
 	<div class="hide news-list-nav">
 		<a class="disabled">&lt; prev</a><span>1/21</span><a class="" href="/top/2">more &gt;</a>
 	</div>
+		<!-- {{ if .Params.projectthumb }}{{ end }} -->
 	<div class="news-list">
 		<ul>
 		{{ range $index, $id := where .Site.Pages.ByTitle "Section" "projects" }}
@@ -12,7 +13,6 @@
 			<li class="news-item {{ .Title | urlize }}">
 				<div class="news-item-inner">
 						<a href="{{ .Permalink }}" class="thumb">
-							<!-- {{ if .Params.projectthumb }}{{ end }} -->
 							<div class="thumb-image" style="background-image: url('images/uploads/{{ .Params.projectthumb }}');"></div>
 						</a> 
 						<div class="news-item-content">
