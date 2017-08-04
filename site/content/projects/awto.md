@@ -44,10 +44,11 @@ projectthumb: awto.jpg
 projectvideo: 'https://youtu.be/vn7rrBgVnFo'
 projectcategory: transporte
 projecttags: '["Auto compartido", "Car Rental", "Aplicación"]'
-projectcreator: awto
+projectcreator: awtocl
 projectcountry: Chile
-projectemail: '@awtocl'
+projectemail: contacto@awto.cl
 projectlinkedin: '#'
 typeofcms: Disponible Ahora
 ---
+
 
