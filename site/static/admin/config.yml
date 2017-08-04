@@ -8,15 +8,15 @@ media_folder: "img/uploads" # Folder where user uploaded files should go
 publish_mode: editorial_workflow
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "projects" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Projects" # Used in the UI, ie.: "New Post"
-    folder: "site/content/projects" # The path to the folder where the documents are stored
+  - name: "products" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Products" # Used in the UI, ie.: "New Post"
+    folder: "site/content/products" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
       - {label: "Name", name: "project-name", widget: "string"}
       - {label: "Type", name: "project-type", widget: "string"}
       - {label: "Headline", name: "project-headline", widget: "string"}
-      - {label: "Url", name: "project-site", widget: "string"}
+      - {label: "Project url", name: "project-site", widget: "string"}
       - {label: "Description", name: "project-description", widget: "markdown"}
       - {label: "Thumbnail", name: "project-thumb", widget: "string"}
       - {label: "Video", name: "project-video", widget: "string"}
