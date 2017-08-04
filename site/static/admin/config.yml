@@ -13,13 +13,19 @@ collections: # A list of collections the CMS should be able to edit
     folder: "site/content/projects" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Repo", name: "repo", widget: "string"}
-      - {label: "Home Page URL", name: "homepage", widget: "string"}
-      - {label: "Open Source", name: "opensource", widget: "string"}
-      - {label: "Type", name: "typeofcms", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Name", name: "project-name", widget: "string"}
+      - {label: "Type", name: "project-type", widget: "string"}
+      - {label: "Headline", name: "project-headline", widget: "string"}
+      - {label: "Url", name: "project-site", widget: "string"}
+      - {label: "Description", name: "project-description", widget: "markdown"}
+      - {label: "Thumbnail", name: "project-thumb", widget: "string"}
+      - {label: "Video", name: "project-video", widget: "string"}
+      - {label: "Category", name: "project-category", widget: "string"}
+      - {label: "Tags", name: "project-tags", widget: "string"}
+      - {label: "Creator", name: "project-creator", widget: "string"}
+      - {label: "Country", name: "project-country", widget: "string"}
+      - {label: "Contact Email", name: "project-email", widget: "string"}
+      - {label: "Linkedin user", name: "project-linkedin", widget: "string"}
   - name: "pages"
     label: "Pages"
     folder: "site/content/pages" # The path to the folder where the documents are stored
