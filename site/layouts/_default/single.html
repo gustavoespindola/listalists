@@ -1,9 +1,7 @@
 {{ partial "head" . }}
 	<div class="main">
 		<div class="sheet">
-<!--       {{ if eq .Params.opensource "Yes" }}
-				<div class="tag">open source</div>
-			{{ end }} -->
+
 			<h1>{{ .Title }}</h1>
 			<div class="links">
 			<div class="headline">{{ .Params.projectheadline }}</div>
@@ -32,13 +30,7 @@
 				<li class="meta-unit"><b>Creador</b>@{{ .Params.projectcreator }}</li>
 				<li class="meta-unit"><b>País</b> {{ .Params.projectemail }}</li>
 			</ul>
-<!--       {{ if .Params.images }}
-			<div class="images">
-				{{ range .Params.images }}
-					<img src="{{ .path }}" class="responsive"/>
-				{{ end }}
-			</div>
-			{{ end }} -->
+
 
 {{ .Content }}
 		</div>
