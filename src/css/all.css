@@ -95,6 +95,7 @@ b, strong{
 		box-sizing: border-box;
 		margin: 0 auto;
 		padding: 1rem .5rem;
+		text-align: center;
 	}
 	.menu, ul.menu{
 		display: inline-block;
@@ -147,17 +148,19 @@ b, strong{
 }
 
 .news-list-nav {
-  display: flex;
-  font-size:  .7rem;
-  color: gray;
-  text-transform: uppercase;
-  background-color: white;
-  margin: 1rem 0;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+	font-size:  .7rem;
+	color: gray;
+	text-transform: uppercase;
+	background-color: white;
+	align-items: center;
+	text-overflow: clip;
+	white-space: nowrap;
+	padding: 0 1rem;
+	overflow: hidden;
+	overflow-x: scroll;
+	border-bottom: 1px solid #f7f7f7;
   li{
-  display: flex;
+  display: inline-block;
   padding: 1rem;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -174,7 +177,6 @@ b, strong{
 
 .news-list {
 	position: relative;
-	// margin: 2rem 0;
 	width: 100%;
 	transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
@@ -355,6 +357,24 @@ b, strong{
   background: #fff;
   padding: 1rem;
   border-bottom: 1px solid #f2f2f2;
+  .single-thumb{
+  	box-shadow: 0 6px 12px rgba(0,0,0,.1);
+  	margin: 1rem 0;
+  	max-width: 100%;
+  	width: 100%;
+  	display: block;
+  }
+	a.btn.go-site {
+		text-transform: uppercase;
+		font-size: .7rem;
+		color: #fff;
+		background-color: #ffa500;
+		padding: .7rem;
+		display: inline-block;
+		border-radius: .15rem;
+		margin: 1rem 0;
+		letter-spacing: .025rem;
+	}
 }
 
 @media (max-width: 600px) {
@@ -363,6 +383,7 @@ b, strong{
 	}
 	.news-list-nav{
 		margin: 0;
+		justify-content: center;		
 	}
 	.navbar{
 		position: fixed;

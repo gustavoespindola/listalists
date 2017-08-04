@@ -1,22 +1,38 @@
 {{ partial "head" . }}
   <div class="main">
     <div class="sheet">
-      {{ if eq .Params.opensource "Yes" }}
+<!--       {{ if eq .Params.opensource "Yes" }}
         <div class="tag">open source</div>
-      {{ end }}
+      {{ end }} -->
       <h1>{{ .Title }}</h1>
       <div class="links">
-        <a href="{{ .Params.homepage }}"><i class="fa fa-home"></i> {{ .Params.homepage }}</a>
-        <span class="separator">|</span>
-        <a href="https://github.com/{{ .Params.repo }}"><i class="fa fa-github"></i> https://github.com/{{ .Params.repo }}</a>
+      <div class="headline">{{ .Params.projectheadline }}</div>
+      <a class="btn go-site" href="{{ .Params.projectsite }}/?utm_source=trafkin" target="blank" >Ver Sitio</a>
       </div>
-      {{ if .Params.images }}
+
+      <div class="media">
+      <div class="project-video">{{ .Params.projectvideo }}</div>
+      <div class="project-description">{{ .Params.description }}</div>
+      </div>
+
+      <div class="taxonomy">
+      <div class="category">{{ .Params.projectcategory }}</div>
+      <div class="tags">{{ .Params.projecttags }}</div>
+      </div>
+      <div class="meta">
+        <div class="meta-unit">{{ .Params.projectcreator }}</div>
+        <div class="meta-unit">{{ .Params.projectcreator }}</div>
+        <div class="meta-unit">{{ .Params.projectcountry }}</div>
+        <div class="meta-unit">{{ .Params.projectemail }}</div>
+      </div>
+<!--       {{ if .Params.images }}
       <div class="images">
         {{ range .Params.images }}
           <img src="{{ .path }}" class="responsive"/>
         {{ end }}
       </div>
-      {{ end }}
+      {{ end }} -->
+      <img class="single-thumb" src="https://listalists.com/images/uploads/{{ .Params.projectthumb }}" alt="">
       <div class="text">
       <h7>Supported Site Generators:</h7>
         <ul>
@@ -24,7 +40,6 @@
             <li>{{ . }}</li>
           {{ end }}
         </ul>
-
         {{ .Content }}
       </div>
 
