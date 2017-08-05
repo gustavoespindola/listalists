@@ -14,12 +14,12 @@ var $grid = $('.news-list').isotope({
 
   var sortAscending = {title: true};
 
-  $(".news-list").isotope({
-    layoutMode: "fitRows",
-    getSortData: {
-      title: "[data-title]"
-    }
-  });
+  // $(".news-list").isotope({
+  //   layoutMode: "fitRows",
+  //   getSortData: {
+  //     // title: "[data-title]"
+  //   }
+  // });
 
   $('.landing .news-list').matchHeight();
 
