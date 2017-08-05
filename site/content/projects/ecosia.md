@@ -13,7 +13,7 @@ description: >-
   cuenta con un equipo que oscila entre siete y trece miembros.
 projectthumb: ecosia.jpg
 projectvideo: 'https://youtu.be/Ui6R9fo2rjk'
-projectcategory: información
+projectcategory: informacion
 projecttags: '["Internet", "forestal", "tecnología"]'
 projectcreator: ecosia
 projectcountry: Alemania
