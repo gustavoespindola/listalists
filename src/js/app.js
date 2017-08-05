@@ -21,7 +21,7 @@ var $grid = $('.news-list').isotope({
     }
   });
 
-  $('.landing .news-item').matchHeight();
+  $('.landing .news-list').matchHeight();
 
 // filter items on button click
 $('.news-list-nav').on( 'click', 'li', function() {
