@@ -48,10 +48,9 @@
 		</div>
 	</div>
 
-
 		<!-- {{ if .Params.projectthumb }}{{ end }} -->
 	<ul class="news-list">
-		{{ range $index, $id := where .Site.Pages.ByTitle "Section" "projects" }}
+		{{ range $index, $id := where .Site.Pages.ByDate "Section" "projects" }}
 			{{ if ne .Title "Projects" }}
 			<li class="news-item {{ .Params.projectcategory | urlize }}">
 				<div class="news-item-inner">
@@ -61,7 +60,8 @@
 						<div class="news-item-content">
 							<span class="title">
 								<a href="{{ .Permalink }}" >{{ .Title }}</a> 
-								<span class="hide host">(blog.nothinguntoward.eu)</span>
+								<span class="host">
+								</span>
 							</span>
 							<a href="{{ .Permalink }}" class="headline">{{ .Params.projectheadline }}</a>
 							<span class="meta">
