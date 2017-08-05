@@ -56,7 +56,7 @@
 			<li class="news-item {{ .Params.projectcategory | urlize }}">
 				<div class="news-item-inner">
 						<a href="{{ .Permalink }}" class="thumb">
-							<div class="thumb-image" style="background-image: url('images/uploads/{{ .Params.projectthumb }}');"></div>
+							<div class="thumb-image" style="background-image: url( {{  .Params.projectthumb | safeURL  }});"></div>
 						</a> 
 						<div class="news-item-content">
 							<span class="title">
