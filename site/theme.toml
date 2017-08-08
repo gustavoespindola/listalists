@@ -1,0 +1,12 @@
+name = "Listalists"
+license = "MIT"
+licenselink = ""
+description = "A minimalistic"
+homepage = ""
+tags = ["lists"]
+features = ["Lists"]
+min_version = 0.10
+
+[author]
+  name = "gustavoespindola"
+  homepage = "//github.com/gustavoespindola"
