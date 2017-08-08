@@ -2,14 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="image/x-icon" rel="shortcut icon" href="/images/favicon.ico">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>{{ .Title }}</title>
+    <title>listaLists</title>
+    <link type="image/x-icon" rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}">
+
 
     <meta name="description" content="List " />
 
@@ -39,4 +41,3 @@
   </head>
 
   <body>
-    {{ partial "navbar" . }}

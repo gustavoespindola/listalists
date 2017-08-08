@@ -1,4 +1,11 @@
 baseurl: "/"
-languageCode: "en-us"
 title: "listaLists"
+footnoteReturnLinkContents: "↩"
+permalinks:
+  post: /:year/:month/:title/
+params:
+  Subtitle: "Everything List"
+  AuthorName: "GustavoEspindola"
+  GitHubUser: "GustavoEspindola"
+languageCode: "en-us"
 metaDataFormat: "yaml"
