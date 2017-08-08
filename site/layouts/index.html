@@ -57,13 +57,13 @@
 				<li class="news-item {{ .Params.projectcategory | urlize }}">
 					<div class="news-item-inner">
 
-						<a href="{{ .Permalink }}" class="thumb">
+						<a href="{{ .Params.projectsite | safeURL }}?utm_source=trafkin " target="blank"  class="thumb">
 							<div class="thumb-image" style="background-image: url('{{ .Params.projectthumb | safeURL }}');"></div>
 						</a> 
 
 						<div class="news-item-content">
 							<span class="title">
-								<a href="{{ .Permalink }}">{{ .Params.Title }}</a> <span class="host hide"></span>
+								<a href="{{ .Permalink }}">{{ .Title }}</a> <span class="host hide"></span>
 							</span>
 
 							<a href="{{ .Permalink }}" class="headline">{{ .Params.projectheadline}}</a>
@@ -71,10 +71,11 @@
 							<span class="meta">
 							<span class="dimension"><span>{{ .Params.projectcategory}}</span></span> 
 
+							<span class="hide time">{{ .Params.projectcountry }} </span>
 							<span class="hide by">by <a class="" href="/user/alecjw">alecjw</a></span> 
-							<span class="hide time">1 hour ago</span> 
-							<span class="hide ikes-link"><a class="" href="/item/14743039">11 Likes</a></span>
-							<span class="hide comments-link"><a class="" href="/item/14743039">11 Comments</a></span>
+							<span class="hide time">{{ .Params.typeofcms }}</span> 
+							<span class="hide ikes-link"><a class="" href="/item/14743039">Likes</a></span>
+							<span class="hide comments-link"><a class="" href="/item/14743039">Comments</a></span>
 							</span>
 
 						</div>
