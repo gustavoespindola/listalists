@@ -10,3 +10,5 @@ min_version = 0.10
 [author]
   name = "gustavoespindola"
   homepage = "//github.com/gustavoespindola/listalists"
+[params]
+	date_format = "Mon, 2. Jan. 2006"

@@ -401,7 +401,7 @@ ul, li{
 	}
 	.homeForm {
 		padding: 1rem;
-		border: 1px solid #f2f2f2;
+		// border: 1px solid #f2f2f2;
 		border-radius: 4px;
 		text-align: center;
 		h5{
