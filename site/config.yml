@@ -1,6 +1,5 @@
 baseurl: "/"
 title: "listaLists"
-footnoteReturnLinkContents: "↩"
 permalinks:
   post: /:year/:month/:title/
 params:
@@ -9,9 +8,7 @@ params:
   GitHubUser: "GustavoEspindola"
 languageCode: "en-us"
 metaDataFormat: "yaml"
-# include content with publishdate in the future
-buildFuture:                true
-# Missing translations will default to this content language
-defaultContentLanguage:     "en"
-# Enable Emoji emoticons support for page content; see emoji-cheat-sheet.com
-enableEmoji:                true
+buildFuture: true
+defaultContentLanguage: "en"
+enableEmoji: true
+publishDir: docs
