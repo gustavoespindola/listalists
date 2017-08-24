@@ -1,83 +1,162 @@
 {{ partial "head" . }}
-<div class="navbar">
-    <div class="container">
-      <a href="/" class="logotype">
-        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA5NjAgNzI0LjgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDk2MCA3MjQuOCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggZmlsbD0iI0ZGQzk0MSIgZD0iTTM1Mi40LDU0NS45Yy04My4yLDAtMTU0LjMtNjEtMTcwLjItMTQwLjFjLTMuOS0xOS40LTIwLjYtMzMuNS00MC40LTMzLjVoLTk4Yy0yNC44LDAtNDQsMjEuOC00MC44LDQ2LjRjMjIuNywxNzIuNywxNzAuNSwzMDYsMzQ5LjQsMzA2YzE3Ni4zLDAsMzIzLjgtMTMzLjEsMzQ4LjgtMzA1LjVjMy42LTI0LjctMTUuNy00Ni45LTQwLjctNDYuOWgtOTcuNGMtMTkuOCwwLTM2LjUsMTQuMS00MC40LDMzLjVDNTA2LjcsNDg0LjksNDM1LjcsNTQ1LjksMzUyLjQsNTQ1Ljl6Ii8+PHBhdGggZmlsbD0iI0Y5MkE1QiIgZD0iTTEzNy43LDI3NS4zQzYwLjQsMjc1LjMsMCwyMTEuNSwwLDEzNy43QzAsNjAuNCw2MC40LDAsMTM3LjcsMHMxMzcuNyw2My44LDEzNy43LDEzNy43QzI3NS4zLDIxNC45LDIxNC45LDI3NS4zLDEzNy43LDI3NS4zeiIvPjxwYXRoIGZpbGw9IiMyRkQ5QjciIGQ9Ik02MDMuOSwzOC4zaDMxNWMyMi43LDAsNDEuMSwxOC40LDQxLjEsNDEuMXY5Ni43YzAsMjIuNy0xOC40LDQxLjEtNDEuMSw0MS4xaC0zMTVjLTIyLjcsMC00MS4xLTE4LjQtNDEuMS00MS4xVjc5LjRDNTYyLjgsNTYuNyw1ODEuMiwzOC4zLDYwMy45LDM4LjN6Ii8+PC9nPjwvc3ZnPg==" alt="logo" class="logo"></a>
-        <!-- <a href="/top" class="router-link-exact-active router-link-active">Top</a><a href="/new" class="">New</a><a href="/show" class="">Show</a><a href="/ask" class="">Ask</a><a href="/job" class="">Jobs</a> -->
-    </div>
-  </div>
 
-<div class="main landing">
+<div class="app trafkin">
 
-<section>
-	<div class="welcome">
-		<h1>Conoce nuevos emprendimientos sociales</h1>
-		<h3 class="display-4"><strong>Trafkin</strong> es una lista de emprendimientos que hacen del mundo un lugar mejor</h3>
+<div class="single-featured black">
+	<header class="header absolute">
+		<div class="row">
+			<div class="logotype"><img src="/images/trafkin__logotype.png" alt=""></div>
+			<ul class="menu"><li><a href="/" class="button-menu"><div class="i"><div></div><div></div><div></div></div><span class="label">Menú</span></a></li></ul>
+		</div>
+	</header>
+
+	<div class="section-container ">
+		<div class="featured-view fullwidth">
+			<section class="featured">
+				<div class="masthead full-bg" style="background-image: url('/images/masthead.jpg');">
+					<img src="/images/masthead.jpg" class="hide" alt="">
+				</div>
+				<div class="featured-container bottom">
+					<article>
+						<div class="card white">
+							<h1 class="title">Poliglota</h1>
+							<div class="headline">La primera comunidad gratuita para aprender idiomas</div>
+							<p class="excerpt">La agrupación, fundada por chilenos, pretende reunir a gente en distintos países que quieran aprender y compartir un idioma de manera gratuita.</p>
+							<p class="dimension">Educación</p>
+						</div>
+					</article>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+<div class="lists">
+
+	<div class="single-list list-02">
+
+		<section class="welcome">
+			<div class="flex-row center">
+				<div class="flex-col col-6">
+					<h1><span class="eyebrow">Semana 02</span> &nbsp;Título inspirador</h1>
+					<p>This week is focused on hanging around with friends and family. Gather around the table with <a href="http://restored.nl/" target="_blank"> Restored</a>, <a href="https://www.connox.com/jenaer-glas.html" target="_blank">Jenaer</a> and <a href="http://hay.dk" target="_blank">HAY</a>.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="list listed list-02">
+			<div class="flex-row center">
+				<div class="flex-col col-8">
+					<ul class="list-container">
+
+						{{ range first 3 (where .Site.Pages.ByTitle "Section" "projects") }}
+						{{ if ne .Title "Projects" }}
+							<li class="card flex-col flex-col-auto"><a href="{{ .Permalink }}">
+								<div class="section">
+									<div class="thumbnail">
+										<img src="{{ .Params.projectthumb | safeURL }}" alt="">
+									</div>
+								</div>
+								<div class="section padded">
+									<div class="title"><div class="category">{{ .Params.projectcategory}}</div>{{ .Title }}</div>
+									<p class="by hide">por <strong>basico.io</strong></p>
+									<div class="headline">{{ .Params.projectheadline}}</div>
+									<p class="excerpt">{{ .Summary }}</p>
+								</div>
+								</a>
+							</li>
+						{{ end }}{{ end }}
+					</ul>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<div class="single-list list-01">
+
+		<section class="welcome">
+			<div class="flex-row center">
+				<div class="flex-col col-6">
+					<h1><span class="eyebrow">Trafkin 01</span> &nbsp;Título inspirador</h1>
+					<p>This week is focused on hanging around with friends and family. Gather around the table with <a href="http://restored.nl/" target="_blank"> Restored</a>, <a href="https://www.connox.com/jenaer-glas.html" target="_blank">Jenaer</a> and <a href="http://hay.dk" target="_blank">HAY</a>.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="list cardted">
+			<div class="flex-row center">
+				<div class="flex-col col-10">
+					<ul class="list-container flex-row between">
+					{{ range last 3 (where .Site.Pages.ByTitle "Section" "projects") }}
+					{{ if ne .Title "Projects" }}
+						<li class="card flex-col col-4 "><a href="#">
+								<div class="section">
+									<div class="thumbnail">
+										<img src="{{ .Params.projectthumb | safeURL }}" alt="">
+									</div>
+								</div>
+								<div class="section padded">
+									<div class="title"><div class="category">{{ .Params.projectcategory}}</div>{{ .Title }}</div>
+									<p class="by hide">por <strong>basico.io</strong></p>
+									<div class="headline">{{ .Params.projectheadline}}</div>
+									<p class="excerpt">{{ .Summary }}</p>
+								</div>
+							</a>
+						</li>
+					{{ end }}{{ end }}
+					</ul>
+				</div>
+			</div>
+		</section>
+	</div>
+	
+</div>
+
+<div class="modal about-us hide">
+	<div class="flex-row middle">
+		<div class="flex-col col-12">
+			<div class="flex-row center">
+				<div class="flex-col col-6">
+					<div class="modal-container">
+						<section class="welcome">
+								<div class="logotype"><img src="/images/trafkin__logotype.png" alt=""></div>
+								<h1><span class="eyebrow">Semana 01</span> &nbsp;Un emprendimiento social cada semana</h1>
+								<p>Somos una lista de iniciativas que hacen del mundo un lugar mejor. <b>Suscríbete</b> para recibir nuestro boletín con los mejores emprendimientos de cada semana.</p>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<section class="newsletter">
+	<div class="flex-row middle">
+		<div class="flex-col col-12">
+			<div class="flex-row center">
+				<div class="flex-col col-6">
+					<div class="modal-container">
+						<div class="inner">
+							<form id="newsletter" name="newsletter" action="newsletter" method="post"><input type="hidden" name="form-name" value="newsletter">
+							<i>💌</i>
+							<h2>Mantente informado. Inscríbete en nuestro boletín para recibir información sobre nuestro proyecto</h2>
+							<fieldset>
+								<input placeholder="Nombre" name="name" type="text" tabindex="1" required="">
+							</fieldset>
+							<fieldset>
+								<input placeholder="Email" type="email" tabindex="2" name="email" required="">
+							</fieldset>
+							<fieldset>
+								<button class="button" name="submit" type="submit" id="newsletter-submit" data-submit="...Enviando">Enviar</button>
+							</fieldset>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 
-<div class="news-view view">
-
-	<ul class="news-list-nav">
-		<ul class="fixed">
-			<li data-filter="*">Todos<div class="filter-count"></div></li>
-		</ul>
-			<ul class="scroll">
-			<li data-filter=".alimentación">alimentación<div class="filter-count"></div></li>
-				<li data-filter=".desarrollo">desarrollo social<div class="filter-count"></div></li>
-				<li data-filter=".economia">economía y finanza<div class="filter-count"></div></li>
-				<li data-filter=".educacion">educación<div class="filter-count"></div></li>
-				<li data-filter=".empleabilidad">empleabilidad<div class="filter-count"></div></li>
-				<li data-filter=".informacion">información<div class="filter-count"></div></li>
-				<li data-filter=".salud">salud<div class="filter-count"></div></li>
-				<li data-filter=".sanidad">sanidad<div class="filter-count"></div></li>
-				<li data-filter=".servicios">servicios básicos<div class="filter-count"></div></li>
-				<li data-filter=".transporte">transporte <div class="filter-count"></div></li>
-			</ul>
-		</ul>
-		
-	<ul class="news-list" >
-		{{ range $index, $id := where .Site.Pages.ByTitle "Section" "projects" }}
-	      {{ if ne .Title "Projects" }}
-				<li class="news-item {{ .Params.projectcategory }}">
-
-					<div class="news-item-inner">
-
-						<a href="{{ .Params.projectsite | safeURL }}?utm_source=trafkin" target="_blank" class="thumb">
-							<div class="thumb-image" style="background-image: url('{{ .Params.projectthumb | safeURL }}');"></div>
-						</a> 
-
-						<div class="news-item-content">
-							<span class="title">
-								<a href="{{ .Params.projectsite | safeURL }}?utm_source=trafkin" target="_blank">{{ .Title }}</a> <span class="host hide"></span>
-							</span>
-
-							<a href="{{ .Params.projectsite | safeURL }}?utm_source=trafkin" class="headline" target="_blank">{{ .Params.projectheadline}}</a>
-
-							<span class="meta">
-							<span class="dimension"><span>{{ .Params.projectcategory}}</span></span> 
-
-							<span class="hide time">{{ .Params.projectcountry }} </span>
-							<span class="hide by">by <a class="" href="/user/alecjw">alecjw</a></span> 
-							<span class="hide time">{{ .Params.typeofcms }}</span> 
-							<span class="hide ikes-link"><a class="" href="/item/14743039">Likes</a></span>
-							<span class="hide comments-link"><a class="" href="/item/14743039">Comments</a></span>
-							</span>
-						</div>
-					</div>
-	      {{ end }}
-	    {{ end }}
-	</ul>
-</div>
-
-		<div class="homeForm">
-			<h5>Suscríbete para recibir nuestro boletín con los mejores emprendimientos de la semana.</h5> 
-			<div id="mc_embed_signup">
-			<form action="//trafk.us15.list-manage.com/subscribe/post?u=2db3e5c9c4162ddc99427b8e6&amp;id=c9608b0910" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate=""><div id="mc_embed_signup_scroll"><div class="mc-field-group"><input type="email" placeholder="email@site.me" value="" name="EMAIL" class="required email" id="mce-EMAIL"></div><div id="mce-responses" class="clear"><div class="response" id="mce-error-response" style="display:none"></div><div class="response" id="mce-success-response" style="display:none"></div></div><div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2db3e5c9c4162ddc99427b8e6_c9608b0910" tabindex="-1" value=""></div><div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-highlight"></div></div></form></div>
-		</div>
-
-</div>
-
-
-
+</div> <!-- app -->
 {{ partial "footer" . }}
