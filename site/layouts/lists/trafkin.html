@@ -12,7 +12,7 @@
 		<meta property="og:title" content="{{ .Title }}" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://trafk.in" />
-		<meta property="og:image" content="{{ .Params.projectthumb | safeURL }}" />
+		<meta property="og:image" content="{{ .Params.projectthumb }}" />
 		<meta property="og:description" content="{{ .Params.projectheadline}}" />
 		<meta name="twitter:card" value="{{ .Params.projectheadline}}">
 
@@ -48,8 +48,7 @@
 			<div class="featured-view full-height fullwidth">
 
 				<section id="featured" class="featured">
-						<div class="masthead full-bg" style="background-image: url('{{ .Params.projectthumb | safeURL }}');">
-							<img src="/images/masthead.jpg" class="hide" alt="">
+						<div class="masthead full-bg" style="background-image: url('{{ .Params.projectthumb  }}');">
 						</div>
 						<div class="featured-container flex-row bottom">
 							<article class="container">
@@ -76,7 +75,7 @@
 				<div class="eyebrow">Proyectos</div>
 				{{ range first 99 ( where .Site.Pages.ByTitle "Section" "projects" ) }}{{ if ne .Title "Projects" }}
 				<div class="carousel-cell">
-					<div class="masthead full-bg" style="background-image: url('{{ .Params.projectthumb | safeURL }}');">
+					<div class="masthead full-bg" style="background-image: url('{{ .Params.projectthumb }}');">
 					</div>
 					<a href="{{ .Permalink }}" class="card">
 						<h1 class="title">{{ .Title }}</h1>
