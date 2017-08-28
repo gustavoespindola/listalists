@@ -5,25 +5,48 @@ backend:
 media_folder: "img/uploads" # Folder where user uploaded files should go
 publish_mode: editorial_workflow
 collections: # A list of collections the CMS should be able to edit
+  - name: authors
+    label: Authors
+    folder: "authors"
+    create: true
+    fields:
+      - { label: "Nombre" , name: "firstname"}
+      - { label: "Apellido" , name: "lastname"}
+      - { label: "Twitter Handle" , name: "userTwitterHandle"}
+      - { label: "Bio" , name: "bio"}
+  - name: categories
+    label: Categories
+    folder: "categories"
+    create: true
+    fields:
+      - { label: "Nombre" , name: "name"}
   - name: "projects" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Projects" # Used in the UI, ie.: "New Post"
     folder: "site/content/projects" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    layout: trafkin
     fields: # The fields each document in this collection have
-      - {label: "Name", name: "title", widget: "string"}
-      - {label: "Type", name: "projecttype", widget: "string"}
-      - {label: "Headline", name: "projectheadline", widget: "string"}
-      - {label: "Project url", name: "projectsite", widget: "string"}
-      - {label: "Description", name: "description", widget: "markdown"}
-      - {label: "Thumbnail", name: "projectthumb", widget: "string"}
-      - {label: "Video", name: "projectvideo", widget: "string"}
-      - {label: "Category", name: "projectcategory", widget: "string"}
-      - {label: "Tags", name: "projecttags", widget: "string"}
-      - {label: "Creator", name: "projectcreator", widget: "string"}
-      - {label: "Country", name: "projectcountry", widget: "string"}
-      - {label: "Contact Email", name: "projectemail", widget: "string"}
-      - {label: "Linkedin user", name: "projectlinkedin", widget: "string"}
-      - {label: "Status", name: "typeofcms", widget: "string"}
+      - {label: "Nombre de proyecto", name: "title", widget: "string"}
+      - {label: "Categoría", name: "categories", widget: "list"}
+      - {label: "Tags", name: "tags", widget: "list", default: ['term_1', 'term_2']}
+      - { label: "País" , name: "projectcountry"}
+      - {label: "Fecha publicación", name: "datetime", widget: "datetime"}
+      - {label: "Título artículo", name: "articleitle" }
+      - {label: "Intro artículo", name: "articleintro" }
+      - {label: "Contenido", name: "body", widget: "markdown"}
+      - {label: "Project Twitter Handle", name: "projectTwitterHandle", widget: "string"}
+      - name: author
+        label: Author
+        widget: relation
+        collection: authors
+        searchFields: [userTwitterHandle]
+        valueField: firstname, lastname
+      - name: categories
+        label: Categories
+        widget: relation
+        collection: categories
+        searchFields: [name]
+        valueField: name
   - name: "pages"
     label: "Pages"
     folder: "site/content/pages" # The path to the folder where the documents are stored
@@ -33,7 +56,6 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "URL", name: "url", widget: "string"}
       - {label: "Layout", name: "layout", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-
   - name: "lists"
     label: "Lists"
     folder: "site/content/lists" # The path to the folder where the documents are stored
@@ -43,4 +65,3 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "URL", name: "url", widget: "string"}
       - {label: "Layout", name: "layout", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-

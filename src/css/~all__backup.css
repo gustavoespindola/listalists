@@ -286,7 +286,6 @@ header{
 		}
 	}
 }
-
 .minimize{
 	-ms-flex-preferred-size: 50%;
 	flex-basis: 50%;
@@ -299,7 +298,6 @@ header{
 		}
 	}
 }
-
 .app{
 	overflow: hidden;
 	.single-featured{
@@ -614,7 +612,6 @@ header{
 		}
 	}
 }
-
 .welcome{
 	background-color: transparent;
 		p{
@@ -637,7 +634,6 @@ header{
 		line-height: 48px;
 		}
 }
-
 .newsletter{
 	text-align: center;
 	background-image: linear-gradient(90deg,#ff6759 2%,#e11231 200%);
@@ -678,7 +674,6 @@ header{
 		border: 0;
 	}
 }
-
 .modal{
 	position: absolute;
 	top: 1rem;

@@ -1,117 +1,224 @@
 {{ partial "head" . }}
 
-<div class="app trafkin">
+<div class="app trafkin single-testing">
 
-<div class="single-featured black">
-	<header class="header absolute">
-		<div class="row">
-			<div class="logotype"><img src="/images/trafkin__logotype.png" alt=""></div>
-			<ul class="menu"><li><a href="/" class="button-menu"><div class="i"><div></div><div></div><div></div></div><span class="label">Menú</span></a></li></ul>
-		</div>
-	</header>
+	<section class="single-featured black">
 
-	<div class="section-container ">
-		<div class="featured-view fullwidth">
-			<section class="featured">
-				<div class="masthead full-bg" style="background-image: url('/images/masthead.jpg');">
-					<img src="/images/masthead.jpg" class="hide" alt="">
-				</div>
-				<div class="featured-container bottom">
-					<article>
-						<div class="card white">
-							<h1 class="title">Poliglota</h1>
-							<div class="headline">La primera comunidad gratuita para aprender idiomas</div>
-							<p class="excerpt">La agrupación, fundada por chilenos, pretende reunir a gente en distintos países que quieran aprender y compartir un idioma de manera gratuita.</p>
-							<p class="dimension">Educación</p>
+		<div class="section-container">
+			<div class="featured-view full-height fullwidth">
+
+				<section id="featured" class="featured">
+					{{ range first 1 ( where .Site.Pages.ByTitle "Section" "projects" ) }}{{ if ne .Title "Projects" }}
+						<div class="masthead full-bg" style="background-image: url('{{ .Params.projectthumb | safeURL }}');">
+							<img src="/images/masthead.jpg" class="hide" alt="">
 						</div>
-					</article>
+						<div class="featured-container flex-row bottom">
+							<article class="container">
+								<!-- <div class="flex-col col-4">
+									<img src="/images/awto__vertical.jpg" alt="">
+								</div> -->
+								<div class="flex-col col-6 card white">
+									<h1 class="title">{{ .Title }}</h1>
+									<p class="metadata">
+										<span class="category">{{ .Params.projectcategory }}</span>
+									</p>
+									<div class="headline">{{ .Params.projectheadline}}</div>
+									<p class="hide excerpt">El carsharing es un concepto que revolucionó el método de movilización en las ciudades más importantes del mundo, y al fin podrás utilizarlo en Chile. </p>
+									<div class="hide button cta"><a href="{{ .Params.projectsite }}/?utm_source=trafkin" target="_blank">Ver proyecto</a></div>
+									<div class="button">Compartir</div>
+								</div>
+							</article>
+						</div>
+				</section>
+					{{end}}{{end}}
+				<!--  -->
+			</div>
+		</div>
+
+		<section class="projects">
+
+			<div class="main-carousel">
+				<div class="eyebrow">Proyectos</div>
+				{{ range first 99 ( where .Site.Pages.ByTitle "Section" "projects" ) }}{{ if ne .Title "Projects" }}
+				<div class="carousel-cell">
+					<div class="masthead full-bg" style="background-image: url('{{ .Params.projectthumb | safeURL }}');">
+					</div>
+					<a href="{{ .Permalink }}" class="card">
+						<h1 class="title">{{ .Title }}</h1>
+						<p class="metadata">
+						<span class="category">{{ .Params.projectcategory }}</span>
+						</p>
+					</a>
+				</div>
+			{{end}}{{end}}
+			</div>
+		</section>
+	</section>
+
+	{{ range first 1 ( where .Site.Pages.ByTitle "Section" "projects" ) }}{{ if ne .Title "Projects" }}
+	<section class="story">
+		<div class="container">
+			<div class="flex-row center">
+				<div class="flex-col col-6">
+					<div class="intro welcome text-center">
+							<h1><span class="eyebrow">Trafkin Semana 01</span>La lucha contra las colusiones</h1>
+							<p>La primera vez que escuché sobre Incoludido pensé que sería una simple empresa que aprovechó la polémica de la Colusión del Confort para lanzar su producto.</p>
+							<hr class="vert">
+							<p>Por Felipe Bravo</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex-row center">
+				<div class="flex-col col-6">
+				<h4 class="hide">Colusión empresarial ¿Cómo sucedió?</h4>
+				<p class="paragraph"><span class="dropcap">E</span>l papel higiénico es considerado un producto de primera necesidad. Hasta el año 2000 en Chile solo había dos grupos empresariales que producían papel higiénico, SCA y CMPC. Cuando una tercera empresa se incorporó al mercado, la producción que ambos grupos sostenían, sumada a la producción de esta nueva empresa, generó el incremento del stock, aumentando la oferta, provocando una baja en los precios del papel higiénico, ya que se mantenía la demanda y aumentó la disponibilidad del producto en el mercado. La producción de la tercera empresa que se incorporó no alcanzaba para cubrir la demanda por sí sola, así que SCA y CMPC decidieron bajar la producción, reduciendo la oferta ante la misma demanda, concluyendo en un alza de precios en sus productos. Aunque se regule efectivamente la colusión de estas empresas, <strong>¿cuál es el problema?</strong>. 
+				</p>
+				<p class="emphasis">
+				<span class="dropcap">F</span>uimos vulnerados y vulneradas, nos vimos afectados en nuestra confianza, y presupuestos, disminuyó el valor de nuestro recurso monetario mientras dos grupos empresariales consolidados se enriquecieron a expensas de un engaño.
+				</p>
+				<h4>¿Qué solución nos ofrece Incoludido?</h4>
+				<p class="paragraph">Incoludido es un proyecto social colaborativo orientado a terminar con la colusión del papel higiénico en Chile a través de precios justos y venta única en almacenes y ferias de todo el país.	El objetivo de Incoludido es dar respuesta real a una oferta de productos básicos coludidos, para así permanecer libre de grupos económicos, haciendo posible el funcionamiento basado en las inversiones, buscando siempre la autonomía y devolviendo los intereses directamente a las personas.
+				</p>
+				<small>
+					<a class="block" href="https://economiatodos.cl/2015/10/30/la-colusion-del-confort-explicada-con-manzanitas/">Fuente</a>
+					<a class="block" href="http://www.latercera.com/noticia/siete-preguntas-clave-para-entender-el-cartel-del-papel-tissue/ ">fuente</a>
+				</small>
+				</div>
+			</div>
+		</div>
+	</section>
+	{{ end }}{{ end }}	
+
+	<section class="lists">
+
+		<div class="single-list list-01">
+
+			<section class="welcome">
+				<div class="flex-row center">
+					<div class="flex-col col-6 text-center">
+						<h1><span class="eyebrow">Semana 01</span>Título inspirador</h1>
+						<p>This week is focused on hanging around with friends and family. Gather around the table with <a href="http://restored.nl/" target="_blank"> Restored</a>, <a href="https://www.connox.com/jenaer-glas.html" target="_blank">Jenaer</a> and <a href="http://hay.dk" target="_blank">HAY</a>.</p>
+						<hr class="vert">
+					</div>
 				</div>
 			</section>
+
+			<section class="list listed list-01">
+				<div class="container">
+					<div class="flex-row center">
+						<div class="flex-col col-8">
+							<ul class="list-container">
+								{{ range last 1 ( where .Site.Pages.ByTitle "Section" "projects" ) }}
+								{{ if ne .Title "Projects" }}
+									<li class="card"><a href="{{ .Permalink }}">
+										<div class="flex-row middle">
+											<div class="flex-col col-8 nopadding">
+												<div class="thumbnail">
+													<img src="{{ .Params.projectthumb | safeURL }}" alt="">
+												</div>
+											</div>
+											<div class="flex-col col-4">
+												<div class="padded">
+													<div class="title"><div class="category">{{ .Params.projectcategory}}</div>{{ .Title }}</div>
+													<p class="by hide">por <strong>basico.io</strong></p>
+													<div class="headline">{{ .Params.projectheadline}}</div>
+													<p class="excerpt">{{ .Summary }}</p>
+												</div>
+											</div>
+										</div>
+										</a>
+									</li>
+								{{ end }}{{ end }}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			
 		</div>
-	</div>
-</div>
+	</section>
 
-<div class="lists">
+	<section class="hide lists newsletter">
 
-	<div class="single-list list-02">
+		<div class="single-list no-list">
+			<section class="list listed">
+				<div class="container">
+					<div class="flex-row center">
+						<div class="flex-col col-8">
+							<ul class="list-container">
+									<li class="card">
+										<div class="flex-row middle">
+											<div class="flex-col col-8 nopadding">
+												<div class="thumbnail">
+													<img src="/images/masthead.jpg" alt="">
+												</div>
+											</div>
+											<div class="flex-col col-4">
+												<div class="padded">
+													<div class="title"><div class="category">Subscribe</div>Newsletter</div>
+													<p class="by hide">por <strong>basico.io</strong></p>
+													<div class="headline">Newsletter</div>
+													<p class="excerpt">Lorem</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="card">
+										<div class="flex-row middle">
+											<div class="flex-col col-8 nopadding">
+												<div class="thumbnail">
+													<img src="/images/masthead.jpg" alt="">
+												</div>
+											</div>
+											<div class="flex-col col-4">
+												<div class="padded">
+													<div class="title"><div class="category">Patrocinado</div>Socialab Essentials</div>
+													<p class="by hide">por <strong>basico.io</strong></p>
+													<div class="headline">Newsletter</div>
+													<p class="excerpt">Lorem</p>
+												</div>
+											</div>
+										</div>
+									</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+		</div>
+	</section>
 
-		<section class="welcome">
-			<div class="flex-row center">
-				<div class="flex-col col-6">
-					<h1><span class="eyebrow">Semana 02</span> &nbsp;Título inspirador</h1>
-					<p>This week is focused on hanging around with friends and family. Gather around the table with <a href="http://restored.nl/" target="_blank"> Restored</a>, <a href="https://www.connox.com/jenaer-glas.html" target="_blank">Jenaer</a> and <a href="http://hay.dk" target="_blank">HAY</a>.</p>
+	<section class="hide newsletter">
+		<div class="container-fluid">
+			<div class="flex-row middle">
+				<div class="flex-col col-12">
+					<div class="flex-row center ">
+						<div class="flex-col col-6">
+							<div class="modal-container">
+								<div class="inner">
+									<form id="newsletter" name="newsletter" action="newsletter" method="post"><input type="hidden" name="form-name" value="newsletter">
+									<i>💌</i>
+									<h2>Frescos descubrimientos de grandes emprendimientos entregados en tu bandeja de entrada.</h2>
+									<fieldset>
+										<input placeholder="Nombre" name="name" type="text" tabindex="1" required="">
+									</fieldset>
+									<fieldset>
+										<input placeholder="Email" type="email" tabindex="2" name="email" required="">
+									</fieldset>
+									<fieldset>
+										<button class="button" name="submit" type="submit" id="newsletter-submit" data-submit="...Enviando">Enviar</button>
+									</fieldset>
+								</form>
+								<small class="text-center">Every Monday morning. No spam, no ads, no selfies.</small>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</section>
-
-		<section class="list listed list-02">
-			<div class="flex-row center">
-				<div class="flex-col col-8">
-					<ul class="list-container">
-
-						{{ range first 3 (where .Site.Pages.ByTitle "Section" "projects") }}
-						{{ if ne .Title "Projects" }}
-							<li class="card flex-col flex-col-auto"><a href="{{ .Permalink }}">
-								<div class="section">
-									<div class="thumbnail">
-										<img src="{{ .Params.projectthumb | safeURL }}" alt="">
-									</div>
-								</div>
-								<div class="section padded">
-									<div class="title"><div class="category">{{ .Params.projectcategory}}</div>{{ .Title }}</div>
-									<p class="by hide">por <strong>basico.io</strong></p>
-									<div class="headline">{{ .Params.projectheadline}}</div>
-									<p class="excerpt">{{ .Summary }}</p>
-								</div>
-								</a>
-							</li>
-						{{ end }}{{ end }}
-					</ul>
-				</div>
-			</div>
-		</section>
-	</div>
-
-	<div class="single-list list-01">
-
-		<section class="welcome">
-			<div class="flex-row center">
-				<div class="flex-col col-6">
-					<h1><span class="eyebrow">Trafkin 01</span> &nbsp;Título inspirador</h1>
-					<p>This week is focused on hanging around with friends and family. Gather around the table with <a href="http://restored.nl/" target="_blank"> Restored</a>, <a href="https://www.connox.com/jenaer-glas.html" target="_blank">Jenaer</a> and <a href="http://hay.dk" target="_blank">HAY</a>.</p>
-				</div>
-			</div>
-		</section>
-
-		<section class="list cardted">
-			<div class="flex-row center">
-				<div class="flex-col col-10">
-					<ul class="list-container flex-row between">
-					{{ range last 3 (where .Site.Pages.ByTitle "Section" "projects") }}
-					{{ if ne .Title "Projects" }}
-						<li class="card flex-col col-4 "><a href="#">
-								<div class="section">
-									<div class="thumbnail">
-										<img src="{{ .Params.projectthumb | safeURL }}" alt="">
-									</div>
-								</div>
-								<div class="section padded">
-									<div class="title"><div class="category">{{ .Params.projectcategory}}</div>{{ .Title }}</div>
-									<p class="by hide">por <strong>basico.io</strong></p>
-									<div class="headline">{{ .Params.projectheadline}}</div>
-									<p class="excerpt">{{ .Summary }}</p>
-								</div>
-							</a>
-						</li>
-					{{ end }}{{ end }}
-					</ul>
-				</div>
-			</div>
-		</section>
-	</div>
-	
-</div>
-
+		</div>
+	</section>
 <div class="modal about-us hide">
 	<div class="flex-row middle">
 		<div class="flex-col col-12">
@@ -130,33 +237,4 @@
 	</div>
 </div>
 
-<section class="newsletter">
-	<div class="flex-row middle">
-		<div class="flex-col col-12">
-			<div class="flex-row center">
-				<div class="flex-col col-6">
-					<div class="modal-container">
-						<div class="inner">
-							<form id="newsletter" name="newsletter" action="newsletter" method="post"><input type="hidden" name="form-name" value="newsletter">
-							<i>💌</i>
-							<h2>Mantente informado. Inscríbete en nuestro boletín para recibir información sobre nuestro proyecto</h2>
-							<fieldset>
-								<input placeholder="Nombre" name="name" type="text" tabindex="1" required="">
-							</fieldset>
-							<fieldset>
-								<input placeholder="Email" type="email" tabindex="2" name="email" required="">
-							</fieldset>
-							<fieldset>
-								<button class="button" name="submit" type="submit" id="newsletter-submit" data-submit="...Enviando">Enviar</button>
-							</fieldset>
-						</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-</div> <!-- app -->
 {{ partial "footer" . }}

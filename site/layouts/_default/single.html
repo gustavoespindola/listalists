@@ -1,36 +1,273 @@
-{{ partial "head" . }}
-	<div class="main">
-		<div class="sheet">
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<title>Trafkin | {{ .Title }}</title>
+		<link type="image/x-icon" rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}">
+		<meta name="description" content="Emprendimientos que hacen del mundo un lugar mejor" />
 
-			<h1>{{ .Title }}</h1>
-			<div class="links">
-			<div class="headline">{{ .Params.projectheadline }}</div>
-			<a class="btn go-site" href="{{ .Params.projectsite }}/?utm_source=trafkin" target="blank" >Ver Sitio</a>
+		<meta property="og:title" content="{{ .Title }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://trafk.in" />
+		<meta property="og:image" content="{{ .Params.projectthumb | safeURL }}" />
+		<meta property="og:description" content="{{ .Params.projectheadline}}" />
+		<meta name="twitter:card" value="{{ .Params.projectheadline}}">
+
+    <link href="/css/flickity.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <script src="https://use.typekit.net/rkk2hvp.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+    
+    <!-- Hotjar Tracking Code for listalists.com -->
+<!--     <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:584347,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script> -->
+
+  </head>
+
+  <body>
+
+{{ partial "navbar" . }}
+
+<div class="app trafkin single-project">
+
+	<section class="single-featured black">
+
+		<div class="section-container">
+			<div class="featured-view full-height fullwidth">
+
+				<section id="featured" class="featured">
+						<div class="masthead full-bg" style="background-image: url('{{ .Params.projectthumb | safeURL }}');">
+							<img src="/images/masthead.jpg" class="hide" alt="">
+						</div>
+						<div class="featured-container flex-row bottom">
+							<article class="container">
+								<div class="flex-col col-6 card white">
+									<h1 class="title">{{ .Title }}</h1>
+									<p class="metadata">
+										<span class="category">{{ .Params.projectcategory }}</span> ⚐ <span class="category">{{ .Params.projectcountry }}</span>
+									</p>
+									<div class="headline">{{ .Params.projectheadline }}</div>
+									<p class="hide excerpt">{{  .Summary }}</p>
+									<div class="hide button cta"><a href="{{ .Params.projectsite }}/?utm_source=trafkin" target="_blank">Ver proyecto</a></div>
+									<div class="hide button">Compartir</div>
+								</div>
+							</article>
+						</div>
+				</section>
+				<!--  -->
 			</div>
+		</div>
 
-			<div class="media">
-				<div class="media-wrapper">
-					<div class="hide media-item">
-						<img class="single-thumb" src="https://listalists.com/images/uploads/{{ .Params.projectthumb }}" alt="">
+		<section class="projects">
+
+			<div class="main-carousel">
+				<div class="eyebrow">Proyectos</div>
+				{{ range first 99 ( where .Site.Pages.ByTitle "Section" "projects" ) }}{{ if ne .Title "Projects" }}
+				<div class="carousel-cell">
+					<div class="masthead full-bg" style="background-image: url('{{ .Params.projectthumb | safeURL }}');">
 					</div>
-					<div class="media-item">
-						<div class="project-video">{{ .Params.projectvideo }}</div>
+					<a href="{{ .Permalink }}" class="card">
+						<h1 class="title">{{ .Title }}</h1>
+						<p class="metadata">
+						<span class="category">{{ .Params.projectcategory }}</span>
+						</p>
+					</a>
+				</div>
+			{{end}}{{end}}
+			</div>
+		</section>
+	</section>
+
+	<section class="story">
+		<div class="container-fluid">
+			<div class="flex-row center">
+				<div class="flex-col col-6">
+					<div class="intro welcome text-center">
+							<h1><span class="eyebrow">Trafkin e.01</span>{{ .Params.articletitle }}</h1>
+							<p>{{ .Params.articleintro }}</p>
+							<hr class="vert">
+							<p>Por Felipe Bravo</p>
 					</div>
 				</div>
 			</div>
+			<div class="flex-row center">
+				<div class="flex-col col-6">
+				<p class="paragraph">
+					{{ .Params.body }}
+				</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
-			<p class="project-description">{{ .Params.description }}</p>
-			<ul class="taxonomy">
-				<li class="category"><b>Categoría</b> {{ .Params.projectcategory }}</li>
-				<li class="tags"><b>Conceptos</b> {{ .Params.projecttags }}</li>
-			</ul>
-			<ul class="meta">
-				<li class="meta-unit"><b>Status</b> {{ .Params.typeofcms }}</li>
-				<li class="meta-unit"><b>País</b> {{ .Params.projectcountry }}</li>
-				<li class="meta-unit"><b>Creador</b><a href="https://twitter.com/{{ .Params.projectcreator }}" target="blank">@{{ .Params.projectcreator }}</a></li>
-				<li class="meta-unit"><b>País</b> {{ .Params.projectemail }}</li>
-			</ul>
-{{ .Content }}
+	<section class="related">
+		{{ if .NextInSection }}
+		<a href="{{.NextInSection.Permalink}}">Previous Post</a> 
+		{{ end }}
+		{{ if .PrevInSection }}
+		<a href="{{.PrevInSection.Permalink}}">Next Post</a>
+		{{ end }}
+	</section>
+
+	<section class="hide lists">
+
+		<div class="single-list list-01">
+
+			<section class="welcome">
+				<div class="flex-row center">
+					<div class="flex-col col-6 text-center">
+						<h1><span class="eyebrow">Semana 01</span>Título inspirador</h1>
+						<p>This week is focused on hanging around with friends and family. Gather around the table with <a href="http://restored.nl/" target="_blank"> Restored</a>, <a href="https://www.connox.com/jenaer-glas.html" target="_blank">Jenaer</a> and <a href="http://hay.dk" target="_blank">HAY</a>.</p>
+						<hr class="vert">
+					</div>
+				</div>
+			</section>
+
+			<section class="list listed list-01">
+				<div class="container">
+					<div class="flex-row center">
+						<div class="flex-col col-8">
+							<ul class="list-container">
+								{{ range last 1 ( where .Site.Pages.ByTitle "Section" "projects" ) }}
+								{{ if ne .Title "Projects" }}
+									<li class="card"><a href="{{ .Permalink }}">
+										<div class="flex-row middle">
+											<div class="flex-col col-8 nopadding">
+												<div class="thumbnail">
+													<img src="{{ .Params.projectthumb | safeURL }}" alt="">
+												</div>
+											</div>
+											<div class="flex-col col-4">
+												<div class="padded">
+													<div class="title"><div class="category">{{ .Params.projectcategory}}</div>{{ .Title }}</div>
+													<p class="by hide">por <strong>basico.io</strong></p>
+													<div class="headline">{{ .Params.projectheadline}}</div>
+													<p class="excerpt">{{ .Summary }}</p>
+												</div>
+											</div>
+										</div>
+										</a>
+									</li>
+								{{ end }}{{ end }}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+		</div>
+	</section>
+
+	<section class="hide lists newsletter">
+
+		<div class="single-list no-list">
+			<section class="list listed">
+				<div class="container">
+					<div class="flex-row center">
+						<div class="flex-col col-8">
+							<ul class="list-container">
+									<li class="card">
+										<div class="flex-row middle">
+											<div class="flex-col col-8 nopadding">
+												<div class="thumbnail">
+													<img src="/images/masthead.jpg" alt="">
+												</div>
+											</div>
+											<div class="flex-col col-4">
+												<div class="padded">
+													<div class="title"><div class="category">Subscribe</div>Newsletter</div>
+													<p class="by hide">por <strong>basico.io</strong></p>
+													<div class="headline">Newsletter</div>
+													<p class="excerpt">Lorem</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="card">
+										<div class="flex-row middle">
+											<div class="flex-col col-8 nopadding">
+												<div class="thumbnail">
+													<img src="/images/masthead.jpg" alt="">
+												</div>
+											</div>
+											<div class="flex-col col-4">
+												<div class="padded">
+													<div class="title"><div class="category">Patrocinado</div>Socialab Essentials</div>
+													<p class="by hide">por <strong>basico.io</strong></p>
+													<div class="headline">Newsletter</div>
+													<p class="excerpt">Lorem</p>
+												</div>
+											</div>
+										</div>
+									</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+		</div>
+	</section>
+
+	<section class="hide newsletter">
+		<div class="container-fluid">
+			<div class="flex-row middle">
+				<div class="flex-col col-12">
+					<div class="flex-row center ">
+						<div class="flex-col col-6">
+							<div class="modal-container">
+								<div class="inner">
+									<form id="newsletter" name="newsletter" action="newsletter" method="post"><input type="hidden" name="form-name" value="newsletter">
+									<i>💌</i>
+									<h2>Frescos descubrimientos de grandes emprendimientos entregados en tu bandeja de entrada.</h2>
+									<fieldset>
+										<input placeholder="Nombre" name="name" type="text" tabindex="1" required="">
+									</fieldset>
+									<fieldset>
+										<input placeholder="Email" type="email" tabindex="2" name="email" required="">
+									</fieldset>
+									<fieldset>
+										<button class="button" name="submit" type="submit" id="newsletter-submit" data-submit="...Enviando">Enviar</button>
+									</fieldset>
+								</form>
+								<small class="text-center">Every Monday morning. No spam, no ads, no selfies.</small>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="hide modal about-us">
+		<div class="flex-row middle">
+			<div class="flex-col col-12">
+				<div class="flex-row center">
+					<div class="flex-col col-6">
+						<div class="modal-container">
+							<section class="welcome">
+									<div class="logotype"><img src="/images/trafkin__logotype.png" alt=""></div>
+									<h1><span class="eyebrow">Semana 01</span> &nbsp;Un emprendimiento social cada semana</h1>
+									<p>Somos una lista de iniciativas que hacen del mundo un lugar mejor. <b>Suscríbete</b> para recibir nuestro boletín con los mejores emprendimientos de cada semana.</p>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+
 {{ partial "footer" . }}

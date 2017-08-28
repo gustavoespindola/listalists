@@ -7,6 +7,10 @@ tags = ["lists"]
 features = ["Lists"]
 min_version = 0.10
 publishDir = "docs"
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  projects = "projects"
 
 [author]
   name = "gustavoespindola"
