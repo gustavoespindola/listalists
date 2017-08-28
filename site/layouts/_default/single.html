@@ -113,12 +113,28 @@
 	</section>
 
 	<section class="related">
-		{{ if .NextInSection }}
-		<a href="{{.NextInSection.Permalink}}">Previous Post</a> 
-		{{ end }}
-		{{ if .PrevInSection }}
-		<a href="{{.PrevInSection.Permalink}}">Next Post</a>
-		{{ end }}
+		<div class="container-fluid">
+			<div class="flex-row center">
+				<div class="flex-col col-6">
+					<div class="flex-row center middle">
+						
+							{{ if .NextInSection }}
+							<div class="flex-col col-6 text-center">
+							<a href="{{.NextInSection.Permalink}}">
+							<h4>Semana anterior</h4>
+							</a> 
+							</div>
+							{{ end }}
+
+							{{ if .PrevInSection }}
+							<div class="flex-col col-6 text-center">
+							<a href="{{.PrevInSection.Permalink}}"><h4>Semana siguiente</h4></a>
+							</div>
+							{{ end }}
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<section class="hide lists">

@@ -1,14 +1,11 @@
 baseurl: "/"
-title: "listaLists"
+title: "Trafkin"
 permalinks:
   post: /:year/:month/:title/
 params:
-  Subtitle: "Everything List"
+  Subtitle: "Trafkin"
   AuthorName: "GustavoEspindola"
   GitHubUser: "GustavoEspindola"
 languageCode: "en-us"
-metaDataFormat: "yaml"
-buildFuture: true
 defaultContentLanguage: "en"
 enableEmoji: true
-publishDir: docs
