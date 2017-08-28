@@ -42,8 +42,7 @@ description: >-
 
 
   ¡Nunca había sido tan fácil arrendar un auto como con AWTO!
-projectthumb: >-
-  /images/awto.jpg
+projectthumb: /images/awto.jpg
 projectvideo: 'https://youtu.be/vn7rrBgVnFo'
 projectcategory: transporte
 projecttags: '["Auto compartido", "Car Rental", "Aplicación"]'
