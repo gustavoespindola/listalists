@@ -514,6 +514,7 @@ header{
 	right: 1rem;
 	background-color: purple;
 	color: white;
+	display: none;
 }
 /*
 .newsletter{
