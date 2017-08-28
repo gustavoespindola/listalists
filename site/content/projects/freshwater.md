@@ -13,7 +13,7 @@ description: >-
   comunidades rurales, las que albergan a más de 195 mil personas, se encuentran
   desprovistas  de las redes necesarias  para el abastecimiento de agua,
   debiendo depender de terceros para poder obtener este recurso.
-projectthumb: /images/freshwatter.jpg
+projectthumb: /images/freshwater.jpg
 projectvideo: 'https://youtu.be/ZDdnfPPA6DY'
 projectcategory: servicios basicos
 projecttags: '["Agua"]'
